@@ -1,0 +1,7 @@
+- name: Post-Deployment Configuration Check
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Record deployment timestamp
+      shell: date >> /var/log/app_deployment.log
+      become: yes
